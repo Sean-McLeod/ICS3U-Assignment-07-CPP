@@ -2,15 +2,14 @@
 
 // Created by Sean McLeod
 // Created on January 2021
-// This program computes the sum using an array
+// This program computes the sum using a list
 
 #include <iostream>
-#include <array>
+#include <list>
 #include <random>
 
 
-template<size_t N>
-int SumCalculator(std::array<int, N> listOfNumbers) {
+int SumCalculator(std::list<int> listOfNumbers) {
     // this function calculates the sum
 
     int sum = 0;
@@ -24,9 +23,9 @@ int SumCalculator(std::array<int, N> listOfNumbers) {
 
 
 main() {
-    // this function uses an array
+    // this function uses a list
 
-    std::array<int, 10> randomNumbers;
+    std::list<int> randomNumbers;
     std::string howManyNumbers;
     int singleRandomNumber;
     int addition;
@@ -50,7 +49,7 @@ main() {
             std::mt19937 rgen(rseed());
             std::uniform_int_distribution<int> idist(1, 100);
             singleRandomNumber = idist(rgen);
-            randomNumbers[loop_counter] = singleRandomNumber;
+            randomNumbers.push_back(singleRandomNumber);
             std::cout << "The random number " << loop_counter << " is "
                       << singleRandomNumber << std::endl;
         }
